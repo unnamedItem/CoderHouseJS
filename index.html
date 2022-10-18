@@ -1,14 +1,47 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre Entrega 1</title>
+    <title>Pre Entrega 2</title>
 </head>
+
 <body>
-    <h2>Pre Entrega 1</h2>
-    <p>Cusmai Franco</p>
+    <div class="center">
+        <div class="content">
+            <div>
+                <h2>Pre Entrega 2 - Cusmai Franco</h2>
+                <p>
+                    Simulador de una librería de juegos pensado para el control del inventario de un club de juegos de mesa.
+                </p>
+                <hr>
+            </div>
+            <div class="menu">
+                <div class="menu-col">
+                    <h4>Gestión de miembros</h4>
+                    <button id="btn-add-member">Dar de alta un miembro</button>
+                    <button id="btn-remove-member">Dar de baja un miembro</button>
+                    <ul class="list" id="members-list"></ul>
+                </div>
+                <div class="menu-col">
+                    <h4>Gestión de juegos</h4>
+                    <button id="btn-add-game">Añadir un juego</button>
+                    <button id="btn-remove-game">Remover un juego</button>
+                    <button id="btn-reserve-game">Reservar un juego</button>
+                    <button id="btn-return-game">Devolver un juego</button>
+                    <ul class="list" id="games-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
+<link rel="stylesheet" href="./styles.css">
+
+<script src="utils.js"></script>
+<script src="board_game.js"></script>
+<script src="member.js"></script>
+<script src="library.js"></script>
 <script src="main.js"></script>
 </html>

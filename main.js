@@ -1,130 +1,29 @@
-// calculator options
-const ADD = 1;
-const SUBTRACT = 2;
-const DIVIDE = 3;
-const MULTIPLY = 4;
-const AVERAGE = 5;
-const EXIT = 0;
+let library = new Library();
 
-// messages
-const optionsMessage = "Elija una opción: \n"
-    + ADD + ": Sumar\n"
-    + SUBTRACT + ": Restar\n"
-    + DIVIDE + ": Dividir\n"
-    + MULTIPLY + ": Multiplicar\n"
-    + AVERAGE + ": Promedio\n"
-    + EXIT + ": Salir";
-const defaultPromptMessage = "Ingrese un número por favor.";
-const averagePromptMessage = "¿Cuantos valores quiere ingresar?";
-const badInput = "No es un número.";
-const notAnOption = "No es una opción valida.";
-const doNotDivideByZero = "No se puede dividir por cero.";
-const resultIs = "El resultado es: ";
+let btnAddMember = document.getElementById("btn-add-member");
+let btnRemoveMember = document.getElementById("btn-remove-member");
+let btnAddGame = document.getElementById("btn-add-game");
+let btnRemoveGame = document.getElementById("btn-remove-game");
+let btnReserveGame = document.getElementById("btn-reserve-game");
+let btnReturnGame = document.getElementById("btn-return-game");
 
+btnAddMember.addEventListener("click", () => library.addMember());
+btnRemoveMember.addEventListener("click", () => library.removeMember());
+btnAddGame.addEventListener("click", () => library.addBoardGame());
+btnRemoveGame.addEventListener("click", () => library.removeGame());
+btnReserveGame.addEventListener("click", () => library.reserveGame());
+btnReturnGame.addEventListener("click", () => library.returnGame());
 
-function askForFloat(message, zeroIncluded=true) {
-    let number;
-    do {
-        number = parseFloat(prompt(message));
-        if (!zeroIncluded && number === 0) {
-            alert(doNotDivideByZero)
-        } else if (!number && number !== 0) {
-            alert(badInput);
-        }
-    } while ((!number && number !== 0) || (!zeroIncluded && number === 0));
-    return number;
-}
+// TEST DATA
+library.members.push(new Member("Juan", "Lopez", 32330210));
+library.members.push(new Member("Maria", "Blanco", 25404321));
+library.members.push(new Member("Axel", "Perez", 47330220));
 
+library.boardGames.push(new BoardGame("Catan", 8, 3, 4, 45));
+library.boardGames.push(new BoardGame("Teg", 5, 2, 6, 90));
+library.boardGames.push(new BoardGame("Say My Name", 7, 4, 12, 90));
+library.boardGames.push(new BoardGame("Century: Spice Road", 7, 2, 5, 90));
+library.boardGames.push(new BoardGame("Magos y Tabernas", 6, 3, 4, 40));
 
-function askForInt(message, zeroIncluded=true) {
-    let number;
-    do {
-        number = parseInt(prompt(message));
-        if (!zeroIncluded && number === 0) {
-            alert(doNotDivideByZero)
-        } else if (!number && number !== 0) {
-            alert(badInput);
-        }
-    } while ((!number && number !== 0) || (!zeroIncluded && number === 0));
-    return number;
-}
-
-
-function add() {
-    let numb1 = askForFloat(defaultPromptMessage);
-    let numb2 = askForFloat(defaultPromptMessage);
-    return numb1 + numb2;
-}
-
-
-function subtract() {
-    let numb1 = askForFloat(defaultPromptMessage);
-    let numb2 = askForFloat(defaultPromptMessage);
-    return numb1 - numb2;
-}
-
-
-function divide() {
-    let numb1 = askForFloat(defaultPromptMessage);
-    let numb2 = askForFloat(defaultPromptMessage, false);
-    return numb1 / numb2;
-}
-
-
-function multiply() {
-    let numb1 = askForFloat(defaultPromptMessage);
-    let numb2 = askForFloat(defaultPromptMessage);
-    return numb1 * numb2;
-}
-
-
-function average() {
-    let amountOfValues = askForInt(averagePromptMessage);
-    let total = 0;
-    for (let i = 0; i < amountOfValues; i++) {
-        total += askForFloat(defaultPromptMessage);
-    }
-    return total / amountOfValues;
-}
-
-
-function calculator() {
-    let isRunning = true;
-
-    do {
-        let option = parseInt(prompt(optionsMessage));
-
-        switch (option) {
-            case ADD:
-                alert(resultIs + add());
-                break;
-
-            case SUBTRACT:
-                alert(resultIs + subtract());
-                break;
-
-            case DIVIDE:
-                alert(resultIs + divide());
-                break;
-
-            case MULTIPLY:
-                alert(resultIs + multiply());
-                break;
-
-            case AVERAGE:
-                alert(resultIs + average());
-                break;
-            
-            case EXIT:
-                isRunning = false;
-                break;
-        
-            default:
-                alert(notAnOption);
-                break;
-        }
-    } while (isRunning);
-}
-
-
-calculator();
+library.renderGames();
+library.renderMembers();
