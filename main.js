@@ -18,12 +18,16 @@ btnReturnGame.addEventListener("click", () => library.returnGame());
 library.members.push(new Member("Juan", "Lopez", 32330210));
 library.members.push(new Member("Maria", "Blanco", 25404321));
 library.members.push(new Member("Axel", "Perez", 47330220));
+library.quantityMembers = 3;
 
 library.boardGames.push(new BoardGame("Catan", 8, 3, 4, 45));
 library.boardGames.push(new BoardGame("Teg", 5, 2, 6, 90));
 library.boardGames.push(new BoardGame("Say My Name", 7, 4, 12, 90));
 library.boardGames.push(new BoardGame("Century: Spice Road", 7, 2, 5, 90));
 library.boardGames.push(new BoardGame("Magos y Tabernas", 6, 3, 4, 40));
+library.quantityGames = 5;
+library.quantityAvailable = 5;
+library.quantityReserved = 0;
 
 library.renderGames();
 library.renderMembers();
