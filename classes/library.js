@@ -279,8 +279,6 @@ class Library {
         this.members = members;
         this.quantityMembers += members.length;
 
-        console.log(games, members)
-
         this.boardGames = games;
         this.quantityGames += games.length;
         this.quantityAvailable += games.filter((game) => !game.reserved);
