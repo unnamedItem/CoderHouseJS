@@ -1,4 +1,4 @@
-
+// Validation functions ==================================================================================
 const isValid = true;
 const isNotValid = false;
 
@@ -37,6 +37,7 @@ const isNotIncluded = (list, key=null) => { return (val) => !list.find(item => i
 const isIncluded = (list, key=null) => { return (val) => list.find(item => item[key] === val) }
 
 
+// Render functions ======================================================================================
 function createListItem(title, info, body, footer, collapseId) {
     let listItem = document.createElement("a");
     listItem.setAttribute("data-bs-toggle", "collapse");
@@ -66,6 +67,8 @@ function createListItem(title, info, body, footer, collapseId) {
     return listItem;
 }
 
+
+// Other stuff ===========================================================================================
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
         (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
