@@ -68,9 +68,72 @@ function createListItem(title, info, body, footer, collapseId) {
 }
 
 
+function createGameCard(id, title, imgSrc) {
+    let card = document.createElement("div");
+    card.className = "card bg-dark p-2 pointer";
+    card.id = id;
+
+    let image = document.createElement("img");
+    image.src = imgSrc;
+    image.className = "card-img-top card-game-img";
+
+    let cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    let cardTitle = document.createElement("h5");
+    cardTitle.className = "card-title text-white";
+    cardTitle.innerHTML = title;
+
+    cardBody.appendChild(cardTitle);
+    card.appendChild(image);
+    card.appendChild(cardBody);
+
+    return card;
+}
+
+
+function createCarouselItem(imgSrc, active) {
+    let item = document.createElement("div");
+    item.className = active ? "carousel-item active" : "carousel-item";
+
+    let image = document.createElement("img");
+    image.src = imgSrc;
+    image.className = "d-block w-100 game-sheet-carousel-img";
+
+    item.appendChild(image);
+
+    return item;
+}
+
+
+function createCarouselIndicator(carouselId, slideId, active) {
+    let indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.setAttribute("data-bs-target", `#${carouselId}`);
+    indicator.setAttribute("data-bs-slide-to", `${slideId}`);
+    indicator.className = active ? "active" : "";
+
+    return indicator;
+}
+
+
 // Other stuff ===========================================================================================
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
         (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     );
+}
+
+
+function displayAlert(message, type) {
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  
+    alertPlaceholder.append(wrapper)
 }
