@@ -10,9 +10,19 @@
 <body class="bg-secondary">
     <nav id="nav-bar" class="navbar bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <span class="text-white">Board Game Vault</span>
             </a>
+
+            <div class="me-auto d-flex">
+                <a class="nav-link active text-white mx-2" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link active text-white mx-2" aria-current="page" href="library.html">Gestión</a>
+            </div>
+
+            <form class="d-flex my-auto" role="search">
+                <input id="navbarSearchGameInput" class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="Search">
+                <button id="navbarSearchGameBtn" class="btn btn-primary" type="submit">Buscar</button>
+            </form>
         </div>
     </nav>
 
