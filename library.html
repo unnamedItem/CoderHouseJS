@@ -1,3 +1,17 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Entrega 3</title>
+</head>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<body class="bg-secondary">
     <nav id="nav-bar" class="navbar bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -16,3 +30,148 @@
         </div>
     </nav>
 
+    <div class="container my-4">
+        <div id="liveAlertPlaceholder"></div>
+
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <div class="card bg-dark text-white my-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestión de miembros</h5>
+                        <hr>
+                        <h6>Añadir nuevo miembro</h6>
+                        <div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="memberName" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="memberName">
+                                            <div class="invalid-feedback" id="memberNameFeedback"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="memberLastName" class="form-label">Apellido</label>
+                                            <input type="text" class="form-control" id="memberLastName">
+                                            <div class="invalid-feedback" id="memberLastNameFeedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="memberDNI" class="form-label">DNI</label>
+                                            <input type="text" class="form-control" id="memberDNI">
+                                            <div class="invalid-feedback" id="memberDNIFeedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-grid">
+                                        <button type="button" class="btn btn-primary" id="btnAddMember">Añadir</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <hr>
+                        <h6>Lista de miembros</h6>
+                        <div class="input-group input-group-sm mb-3">
+                            <input id="searchMember" type="text" class="form-control" placeholder="Buscar">
+                        </div>
+                        <div id="membersList" class="list-group overflow-auto" style="max-height: 498px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="card bg-dark text-white my-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestión de juegos</h5>
+                        <hr>
+                        <p>Añadir un juego</p>
+                        <div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="gameTitle" class="form-label">Titulo</label>
+                                            <input type="text" class="form-control" id="gameTitle">
+                                            <div class="invalid-feedback" id="gameTitleFeedback"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="gameBrand" class="form-label">Marca</label>
+                                            <input type="text" class="form-control" id="gameBrand">
+                                            <div class="invalid-feedback" id="gameBrandFeedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="gameMinPlayers" class="form-label">Jugadores minimos</label>
+                                            <input type="text" class="form-control" id="gameMinPlayers">
+                                            <div class="invalid-feedback" id="gameMinPlayersFeedback"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="gameMaxPlayers" class="form-label">Jugadores maximos</label>
+                                            <input type="text" class="form-control" id="gameMaxPlayers">
+                                            <div class="invalid-feedback" id="gameMaxPlayersFeedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="gameTimeMin" class="form-label">Tiempo de juego minimo</label>
+                                            <input type="text" class="form-control" id="gameTimeMin">
+                                            <div class="invalid-feedback" id="gameTimeMinFeedback"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="gameTimeMax" class="form-label">Tiempo de juego maximo</label>
+                                            <input type="text" class="form-control" id="gameTimeMax">
+                                            <div class="invalid-feedback" id="gameTimeMaxFeedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-grid">
+                                        <button type="button" class="btn btn-primary" id="btnAddGame">Añadir</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <hr>
+                        <h6>Lista de juegos</h6>
+                        <div class="input-group input-group-sm mb-3">
+                            <input id="searchGame" type="text" class="form-control" placeholder="Buscar">
+                        </div>
+                        <div id="gamesList" class="list-group overflow-auto"  style="max-height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<link rel="stylesheet" href="./css/styles.css">
+
+<!-- UTILS -->
+<script src="./javascript/utils.js"></script>
+
+<!-- CLASSES -->
+<script src="./javascript/classBoardGame.js"></script>
+<script src="./javascript/classMember.js"></script>
+<script src="./javascript/classLibrary.js"></script>
+
+<!-- MAIN -->
+<script src="./javascript/mainLibrary.js"></script>
+
+<!-- NAVBAR -->
+<script src="./javascript/navbar.js"></script>
+</html>
