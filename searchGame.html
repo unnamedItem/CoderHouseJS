@@ -1,3 +1,17 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Vault</title>
+</head>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<body class="bg-secondary">
     <nav id="nav-bar" class="navbar bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -15,3 +29,29 @@
             </form>
         </div>
     </nav>
+
+    <div class="container my-4">
+        <div id="liveAlertPlaceholder"></div>
+
+        <div id="loadingSpinner" class="row justify-content-center" style="height: 500px;">
+            <div class="spinner-border my-auto" role="status"></div>
+        </div>
+
+        <div id="gameCards" class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1"></div>        
+    </div>
+</body>
+
+<link rel="stylesheet" href="./css/styles.css">
+
+<!-- UTILS -->
+<script src="./javascript/utils.js"></script>
+
+<!-- SERVICES -->
+<script src="./javascript/serviceBoardGameAtlas.js"></script>
+
+<!-- MAIN -->
+<script src="./javascript/mainSearchGames.js"></script>
+
+<!-- NAVBAR -->
+<script src="./javascript/navbar.js"></script>
+</html>
