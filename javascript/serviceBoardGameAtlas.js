@@ -11,6 +11,7 @@ function goFetch(path, args) {
 
     return fetch(url)
     .then(response => {
+        response.status === 503 && displayAlert("Error 503 API service not available", "warning");
         return response.text();
     })
     .then(response => {
@@ -18,6 +19,7 @@ function goFetch(path, args) {
     })
     .catch(err => {
         console.log(`ERR: ${err}`)
+        displayAlert(err, "danger");
     })
 }
 
@@ -30,20 +32,3 @@ function BGASearchGame(args) {
 function BGAGameImage(args) {
     return goFetch("/game/images", args);
 }
-
-
-function BGAGamePrice(args) {
-    return goFetch("/game/prices", args);
-}
-
-
-async function test() {
-    let games = await BGASearchGame({name: "Catan"});
-
-    games.games.forEach(async game => {
-        let gameImgUrl = await BGAGameImage({game_id: game.id});
-        console.log(gameImgUrl);
-    });
-}
-
-test()
