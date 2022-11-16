@@ -1,0 +1,32 @@
+.text-white {
+    color: white;
+}
+
+.card-game-img {
+    height:300px;
+    border-radius: 5px;
+    background-color: white;
+    object-fit: contain;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pointer:hover {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
+}
+
+.game-sheet-carousel {
+    border-radius: 10px;
+    height: 600px;
+}
+
+.game-sheet-carousel-img {
+    height: 600px;
+    object-fit: contain;
+}
+
+.nav-link:hover {
+    color: gray !important
+}

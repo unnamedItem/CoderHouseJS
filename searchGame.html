@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre Entrega 3</title>
+    <title>Board Game Vault</title>
 </head>
 
 <!-- BOOTSTRAP -->
@@ -31,19 +31,26 @@
     </nav>
 
     <div class="container my-4">
-        <div id="main-title" class="card bg-dark text-white my-2">
-            <div class="card-body">
-                <h4 class="card-title">Bienvenido a la bóveda de juegos</h4>
-                <hr>
-                <p class="card-text">Simulador de una librería de juegos pensado para el control del inventario de un club de juegos de mesa.</p>
-                <a class="btn btn-primary" href="library.html">Ir a gestión</a>
-            </div>
-            <img src="https://i.shgcdn.com/7bf94f90-6cee-4ad4-9672-e933f259f0c4/-/format/auto/-/preview/3000x3000/-/quality/lighter/" class="card-img-bottom p-3" alt="..." style="border-radius: 25px;">
+        <div id="liveAlertPlaceholder"></div>
+
+        <div id="loadingSpinner" class="row justify-content-center" style="height: 500px;">
+            <div class="spinner-border my-auto" role="status"></div>
         </div>
+
+        <div id="gameCards" class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1"></div>        
     </div>
 </body>
 
 <link rel="stylesheet" href="./css/styles.css">
+
+<!-- UTILS -->
+<script src="./javascript/utils.js"></script>
+
+<!-- SERVICES -->
+<script src="./javascript/serviceBoardGameAtlas.js"></script>
+
+<!-- MAIN -->
+<script src="./javascript/mainSearchGames.js"></script>
 
 <!-- NAVBAR -->
 <script src="./javascript/navbar.js"></script>
