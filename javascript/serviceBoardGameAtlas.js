@@ -18,7 +18,7 @@ function goFetch(path, args) {
         return JSON.parse(response);
     })
     .catch(err => {
-        console.log(`ERR: ${err}`)
+        console.log(`ERR: ${err}`);
         displayAlert(err, "danger");
     })
 }
